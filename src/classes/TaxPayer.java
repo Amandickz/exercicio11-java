@@ -1,6 +1,6 @@
 package classes;
 
-public class TaxPayer {
+public abstract class TaxPayer {
 
     private String name;
     private double anualIncome;
@@ -26,7 +26,5 @@ public class TaxPayer {
         this.anualIncome = anualIncome;
     }
 
-    public double tax(){
-        return 0;
-    }
+    public abstract double tax();
 }

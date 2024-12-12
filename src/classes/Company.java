@@ -16,4 +16,15 @@ public class Company extends TaxPayer{
     public void setNumberOfEmployees(int numberOfEmployees) {
         this.numberOfEmployees = numberOfEmployees;
     }
+
+    @Override
+    public double tax() {
+        double totalTax = 0;
+        if(numberOfEmployees <= 10){
+            totalTax = getAnualIncome() * 0.16;
+        } else {
+            totalTax = getAnualIncome() * 0.14;
+        }
+        return totalTax;
+    }
 }

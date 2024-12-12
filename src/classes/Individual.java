@@ -16,4 +16,15 @@ public class Individual extends TaxPayer{
     public void setHealthExpenditures(double healthExpenditures) {
         this.healthExpenditures = healthExpenditures;
     }
+
+    @Override
+    public double tax() {
+        double totalTax = 0;
+        if(getAnualIncome() < 20000){
+            totalTax += (getAnualIncome() * 0.15) - (healthExpenditures * 0.50);
+        } else {
+            totalTax += (getAnualIncome() * 0.25) - (healthExpenditures * 0.50);
+        }
+        return totalTax;
+    }
 }
